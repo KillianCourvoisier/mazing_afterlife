@@ -8,33 +8,42 @@
     width: auto;
     height: auto;
 
+    &__table {
+        background-color:wheat;
+        border: 3px solid yellow;
+        margin: 1em 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
     &__row{
         display: flex;
         flex-direction: row;
+        // &:nth-child(even){
+        //     background-color: black;
+        // }
     }
 
     &__cell{
-        width: 50px;
-        height: 50px;
+        font-size: 0.7em;
+        width: 25px;
+        height: 25px;
         text-align: center;
         border : 1px solid black;
+        // &:nth-child(odd){
+        //     background-color: black;
+        // }
     }
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    &__form__label {
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding : 0.7em;
 
-        & input {
-            margin : 1em;
-            width : 25%;
-        }
+    &__wall {
+        background-color: black;
+    }
+
+    &__path {
+        background : darkolivegreen;
     }
 }
