@@ -1,5 +1,5 @@
 .app {
-  width: 1000px;
+  width: fit-content;
   margin: 1em auto;
   display : flex;
   flex-direction: column;

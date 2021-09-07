@@ -32,9 +32,9 @@ const App = () => {
 
   const init = () => {
     const verticalNumber = parseInt(typedVerticalValue, 10);
-    handleHorizontalInputChange(verticalNumber);
+    handleVerticalInputChange(verticalNumber);
     const horizontalNumber = parseInt(typedHorizontalValue, 10);
-    handleVerticalInputChange(horizontalNumber);
+    handleHorizontalInputChange(horizontalNumber);
   };
   const handleFormSubmit = () => {
     init();
@@ -49,7 +49,10 @@ const App = () => {
         horizontalValue={horizontalValue}
         verticalValue={verticalValue}
       />
-      <Mazeboard horizontalValue={horizontalValue} verticalValue={verticalValue} />
+      <Mazeboard
+        horizontalValue={horizontalValue}
+        verticalValue={verticalValue}
+      />
     </div>
   );
 };

@@ -28,5 +28,7 @@ const Cell = ({ verticalValue, horizontalValue, i }) => {
 
 Cell.propTypes = {
   verticalValue: PropTypes.number.isRequired,
+  horizontalValue: PropTypes.number.isRequired,
+  i: PropTypes.number.isRequired,
 };
 export default Cell;
