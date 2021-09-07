@@ -11,9 +11,15 @@ import Form from 'src/components/Form/form';
 const App = () => {
   const [horizontalValue, setHorizontalValue] = useState(8);
   const [verticalValue, setVerticalValue] = useState(8);
+  const [typedVerticalValue, setTypedVerticalValue] = useState(0);
+  const [typedHorizontalValue, setTypedHorizontalValue] = useState(0);
 
-  const fetchData = () => {
-    console.log(typedNumber);
+  const handleHorizontalTypedInput = (typedNumber) => {
+    setTypedHorizontalValue(typedNumber);
+  };
+
+  const handleVerticalTypedInput = (typedNumber) => {
+    setTypedVerticalValue(typedNumber);
   };
 
   const handleHorizontalInputChange = (typedNumber) => {
@@ -24,17 +30,22 @@ const App = () => {
     setVerticalValue(typedNumber);
   };
 
-  const handleFormSubmit = () => {
-    fetchData();
+  const init = () => {
+    const verticalNumber = parseInt(typedVerticalValue, 10);
+    handleHorizontalInputChange(verticalNumber);
+    const horizontalNumber = parseInt(typedHorizontalValue, 10);
+    handleVerticalInputChange(horizontalNumber);
   };
-
+  const handleFormSubmit = () => {
+    init();
+  };
   return (
 
     <div className="app">
       <Form
         onFormSubmit={handleFormSubmit}
-        onHorizontalInputChange={handleHorizontalInputChange}
-        onVerticalInputChange={handleVerticalInputChange}
+        onHorizontalInputChange={handleHorizontalTypedInput}
+        onVerticalInputChange={handleVerticalTypedInput}
         horizontalValue={horizontalValue}
         verticalValue={verticalValue}
       />
