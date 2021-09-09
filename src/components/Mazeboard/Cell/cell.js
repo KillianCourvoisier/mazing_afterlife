@@ -4,6 +4,10 @@ import 'src/components/Mazeboard/style.scss';
 
 const Cell = ({ verticalValue, horizontalValue, i }) => {
   const cell = [];
+  const randomInt = (min, max) => {
+    const generatedIntNb = Math.floor(Math.random() * max) + min;
+    return generatedIntNb;
+  };
 
   for (let j = 1; j < verticalValue + 1; j += 1) {
     if (j === 1
@@ -12,7 +16,7 @@ const Cell = ({ verticalValue, horizontalValue, i }) => {
        || i === horizontalValue
     ) {
       cell.push(
-        <div className="mazeboard__cell mazeboard__boundaries" key={`${i}-${j}`} id={`${i}-${j}`}>
+        <div className="mazeboard__cell mazeboard__boundary" key={`${i}-${j}`} id={`${i}-${j}`}>
           {i} - {j}
         </div>,
       );
@@ -26,8 +30,8 @@ const Cell = ({ verticalValue, horizontalValue, i }) => {
     }
     else {
       cell.push(
-        <div className="mazeboard__cell mazeboard__path" key={`${i}-${j}`} id={`${i}-${j}`} name={`wesh-${i}-${j}`}>
-          {i}-{j}
+        <div className="mazeboard__cell mazeboard__path" key={`${i}-${j}`} id={`${i}-${j}`}>
+          {randomInt(1, verticalValue * horizontalValue)};
         </div>
         ,
       );
