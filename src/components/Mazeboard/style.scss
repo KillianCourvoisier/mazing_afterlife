@@ -14,12 +14,16 @@
 
     &__cell{
         font-size: 0.7em;
-        width: 25px;
-        height: 25px;
+        width: 40px;
+        height: 40px;
         text-align: center;
         border : 1px solid black;
     }
 
+    &__boundaries{
+        background-color: grey;
+        color: black;
+    }
 
     &__wall {
         background-color: black;
@@ -28,5 +32,6 @@
 
     &__path {
         background : darkolivegreen;
+        color: black;
     }
 }

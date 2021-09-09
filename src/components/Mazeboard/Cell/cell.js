@@ -12,6 +12,13 @@ const Cell = ({ verticalValue, horizontalValue, i }) => {
        || i === horizontalValue
     ) {
       cell.push(
+        <div className="mazeboard__cell mazeboard__boundaries" key={`${i}-${j}`} id={`${i}-${j}`}>
+          {i} - {j}
+        </div>,
+      );
+    }
+    else if (j % 2 !== 0 || i % 2 !== 0) {
+      cell.push(
         <div className="mazeboard__cell mazeboard__wall" key={`${i}-${j}`} id={`${i}-${j}`}>
           {i} - {j}
         </div>,
@@ -19,7 +26,9 @@ const Cell = ({ verticalValue, horizontalValue, i }) => {
     }
     else {
       cell.push(
-        <div className="mazeboard__cell mazeboard__path" key={`${i}-${j}`} id={`${i}-${j}`} name={`wesh-${i}-${j}`} />
+        <div className="mazeboard__cell mazeboard__path" key={`${i}-${j}`} id={`${i}-${j}`} name={`wesh-${i}-${j}`}>
+          {i}-{j}
+        </div>
         ,
       );
     }
