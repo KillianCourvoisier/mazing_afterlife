@@ -1,20 +1,41 @@
-.mazeboard{
-
-    &__form {
+.form{
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    &__form__label {
-        display:flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
+
+    &__input {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         padding : 0.7em;
     
         & input {
-            margin : 1em;
-            width : 25%;
+            margin : 0.7em 0;
+            width : 33%;
+        }
+
+        &__invalid {
+            background-color: red;
+            font-size: 0.8em;
+            margin-bottom: 1em;
+        }
+
+        &__valid {
+            display: none;
+        }
+    }
+
+    &__submit{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        margin : 1em 0 ;
+
+        & input {
+            border: 1px solid rgb(37, 37, 88);
+            border-radius: 7px;
         }
     }
 }
+

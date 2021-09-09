@@ -6,7 +6,11 @@ const Cell = ({ verticalValue, horizontalValue, i }) => {
   const cell = [];
 
   for (let j = 1; j < verticalValue + 1; j += 1) {
-    if (j === 1 || j === verticalValue || i === 1 || i === horizontalValue) {
+    if (j === 1
+       || j === verticalValue
+       || i === 1
+       || i === horizontalValue
+    ) {
       cell.push(
         <div className="mazeboard__cell mazeboard__wall" key={`${i}-${j}`} id={`${i}-${j}`}>
           {i} - {j}
