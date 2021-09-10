@@ -11,8 +11,8 @@ import Form from 'src/components/Form/form';
 const App = () => {
   const [horizontalValue, setHorizontalValue] = useState(9);
   const [verticalValue, setVerticalValue] = useState(9);
-  const [typedVerticalValue, setTypedVerticalValue] = useState(0);
-  const [typedHorizontalValue, setTypedHorizontalValue] = useState(0);
+  const [typedVerticalValue, setTypedVerticalValue] = useState(9);
+  const [typedHorizontalValue, setTypedHorizontalValue] = useState(9);
   const [isHorizontalValid, setIsHorizontalValid] = useState(true);
   const [isVerticalValid, setIsVerticalValid] = useState(true);
   const [alertMessage, setAlertMessage] = useState('');
@@ -64,6 +64,7 @@ const App = () => {
   const handleFormSubmit = () => {
     init();
   };
+
   return (
 
     <div className="app">
