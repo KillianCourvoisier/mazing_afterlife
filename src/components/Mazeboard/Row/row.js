@@ -23,6 +23,8 @@ const Row = ({ horizontalValue, verticalValue }) => {
     setBoardState(board);
   }, [horizontalValue, verticalValue]);
 
+  console.log(boardState);
+
   return (
     [boardState]
   );

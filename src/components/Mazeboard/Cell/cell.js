@@ -10,7 +10,16 @@ const Cell = ({ verticalValue, horizontalValue, activeRow }) => {
   };
 
   for (let j = 1; j < verticalValue + 1; j += 1) {
-    if (j === 1
+    if ((activeRow === 2 && j === 1)
+    || (activeRow === horizontalValue - 1 && j === verticalValue)) {
+      cell.push(
+        <div className="mazeboard__cell mazeboard__path" key={`${activeRow}-${j}`} id={`${activeRow}-${j}`}>
+          {randomInt(1, verticalValue * horizontalValue)}
+        </div>
+        ,
+      );
+    }
+    else if (j === 1
        || j === verticalValue
        || activeRow === 1
        || activeRow === horizontalValue
